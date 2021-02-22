@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Học CSS</title>
+
+    <!-- Cách viết external CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Cách viết CSS internal style -->
+    <style>
+      /* Toàn bộ phần p{} gọi là bộ chọn CSS, p là selector, font-weight, color, font-size là key, các giá trị 600, brown, 18px là value */
+      /* p là element selector */
+      p {
+        font-weight: 600; /* font-weight hiển thị độ đậm nhạt của chữ */
+        color: brown;
+        font-size: 18px; /* font-size thay đổi kích cỡ chữ */
+      }
+
+      #future {
+        font-size: 20px;
+        font-style: italic;
+      }
+
+      #failure {
+        background-color: yellow;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+    
+    </style>
+  </head>
+  <body>
+    <!-- Cách viết inline CSS -->
+    <!-- Chỉ dùng inline CSS trong trường hợp đặc biệt, code CSS ngắn, không ảnh hưởng đến element khác -->
+    <h1>
+      <span style="color: red; background-color: yellow">Kiên nhẫn</span> là yếu
+      tố quan trọng của thành công
+    </h1>
+
+    <!-- Khuyến khích CSS: dùng class -->
+    <!-- id chỉ được viết 1 giá trị, class được viết nhiều giá trị -->
+
+    <p id="future" class="underline uppercase">
+      Tương lai khóc hay cười, phụ thuộc vào độ lười trong quá khứ
+    </p>
+    <p id="failure" class="underline">Thất bại là mẹ thành công</p>
+
+    <p class="truyen-kieu">
+      Đầu lòng hai ả tố nga
+      <br />
+      Thúy Kiều là chị, em là Thúy Vân
+    </p>
+
+
+  </body>
+</html>

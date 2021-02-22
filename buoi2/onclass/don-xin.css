@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ddd;
+  text-align: justify;
+}
+
+#container {
+  background-color: white;
+  width: 60%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 50px;
+  line-height: 1.5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#quoc-hieu,
+.dot {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.intro {
+  font-style: italic;
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.date {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.end-box {
+  text-align: right;
+}
+
+.name {
+  margin-top: 20px;
+  font-weight: 600;
+  text-align: center;
+}
