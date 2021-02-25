@@ -149,15 +149,15 @@
   margin-top: 150px;
 }
 
+.footer-child {
+  width: calc(100% / 6);
+  height: calc(90vw / 6);
+}
+
 /* section-6 */
 
 #section-6 {
   margin-bottom: 0;
-}
-
-#section-6 .footer-child {
-  width: calc(100% / 6);
-  height: calc(90vw / 6);
 }
 
 #section-6 .one {
@@ -188,11 +188,6 @@
 
 #section-7 {
   justify-content: space-around;
-}
-
-#section-7 .footer-child {
-  width: calc(100% / 6);
-  height: calc(90vw / 6);
 }
 
 #section-7 .one {
