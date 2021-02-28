@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 100px 350px;
+  color: #757575;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  line-height: 27px;
+  background-image: url(https://icms-image.slatic.net/images/ims-web/ac5106a6-f60c-4ef4-ab24-8266aa58a458.jpg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+  width: 200px;
+  height: 344px;
+  padding: 8px 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+li a {
+  padding-left: 8px;
+}
+
+li i {
+  padding-right: 8px;
+}
+
+.item-level-1 > a {
+  text-transform: capitalize;
+}
+
+.hover-level-1,
+.hover-level-2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-angle-right {
+  font-size: 20px;
+  display: none;
+}
+
+/* hover */
+
+.menu-list {
+  position: relative;
+}
+
+.menu-list-level-2,
+.menu-list-level-3 {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  display: none;
+}
+
+.menu-list > li:hover .menu-list-level-2,
+.menu-list-level-2 > li:hover .menu-list-level-3 {
+  display: block;
+}
+
+.menu-list-item:hover .hover-level-1,
+.item-level-2:hover .hover-level-2,
+.item-level-3:hover .hover-level-3 {
+  color: #f36d00;
+  background-color: #eceff1;
+}
+
+li:hover .fa-angle-right {
+  display: inline;
+}
