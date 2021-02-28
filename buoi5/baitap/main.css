@@ -1,0 +1,202 @@
+/* main */
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 70px 7px;
+}
+
+/* banner wrapper */
+
+.banner-wrapper {
+  padding-bottom: 0;
+  height: 582px;
+}
+
+.banner-slide {
+  flex-basis: calc(200% / 3);
+  padding: 15px;
+}
+
+.blog-list {
+  height: 100%;
+  flex-basis: calc(100% / 3);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog {
+  height: 21.5%;
+}
+
+.blog-thumbnail {
+  height: 100%;
+  width: 105px;
+  float: left;
+}
+
+.blog-thumbnail img {
+  width: 100% !important;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.blog-info {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-author {
+  font-size: 0.8rem;
+  color: #757575;
+}
+
+/* intro wrapper */
+
+.intro-wrapper a {
+  display: block;
+  margin: auto 30px;
+  width: 25%;
+}
+
+.intro {
+  padding: 20px 0;
+  text-align: center;
+  /* width: 100%; */
+}
+
+.intro-title {
+  margin-top: 15px;
+}
+
+.intro-description {
+  margin-top: 5px;
+  padding: 0 5px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
+}
+
+/* route wrapper */
+
+.route-wrapper {
+  flex-direction: column;
+  background-color: #e4f2fd;
+}
+
+.wrapper-headline {
+  font-weight: 400;
+  text-align: center;
+}
+
+.route-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.route-item {
+  margin: 50px 15px 0;
+  flex-basis: calc((100% - 90px) / 3);
+  background-color: #fff;
+  transition: all 0.5s ease-in-outs;
+  overflow: hidden;
+}
+
+.route-item:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.route-description {
+  padding: 23px;
+}
+
+.route-title {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 21px;
+}
+
+.route-detail {
+  margin-bottom: 10px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.route-time {
+  font-weight: 600;
+  color: #757575;
+}
+
+/* product-wrapper */
+
+.product-wrapper {
+  flex-direction: column;
+}
+
+.product-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 15px;
+}
+
+.chevron-box {
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  border: 2px solid #2196f3;
+  font-size: 18px;
+  color: #757575;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.product-list {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.product-item {
+  margin: 15px;
+  flex-basis: calc((100% - 90px) / 3);
+  overflow: hidden;
+}
+
+.product-description {
+  padding: 23px;
+}
+
+.product-title {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.product-detail {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* video wrapper */
+
+.video-wrapper {
+  background-color: #e4f2fd;
+  padding: 80px 15px;
+}
+
+#video {
+  border-radius: 4px;
+}
