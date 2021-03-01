@@ -17,6 +17,7 @@
   flex-basis: calc(200% / 3);
   padding: 15px;
   height: 100%;
+<<<<<<< HEAD
   overflow: hidden;
 }
 
@@ -24,6 +25,8 @@
   width: 100%;
   height: 100%;
   object-fit: fill;
+=======
+>>>>>>> 804c38cafc041945f752dee3a4b1ac99eac8a989
 }
 
 .blog-list {
