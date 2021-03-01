@@ -43,7 +43,7 @@ li i {
   padding-right: 8px;
 }
 
-.item-level-1 > a {
+.menu-link-item {
   text-transform: capitalize;
 }
 
