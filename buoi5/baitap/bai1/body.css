@@ -21,6 +21,7 @@ img {
   width: 100%;
   vertical-align: middle;
   height: auto;
+  object-fit: cover;
 }
 
 ul,
@@ -46,7 +47,7 @@ a {
   background-color: #464646;
   font-size: 14px;
   line-height: 2.5;
-  padding: 50px 7px;
+  padding: 50px 15px;
 }
 
 .footer-info {
@@ -79,4 +80,3 @@ a {
   font-size: 32px;
   margin: 0 15px 0 10px;
 }
-
