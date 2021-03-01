@@ -16,6 +16,7 @@
 .banner-slide {
   flex-basis: calc(200% / 3);
   padding: 15px;
+  height: 100%;
 }
 
 .blog-list {
