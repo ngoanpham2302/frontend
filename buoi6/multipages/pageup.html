@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .rect {
+        height: 3000px;
+        background-color: green;
+      }
+
+      .scroll-up {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        height: 40px;
+        width: 40px;
+        position: fixed;
+        right: 20px;
+        bottom: 100px;
+        color: #464646;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <p id="page-up">Hello everybody</p>
+
+    <div class="rect"></div>
+
+    <div class="scroll-up">
+      <a href="#page-up" title="Lên đầu trang"
+        ><i class="fas fa-arrow-up"></i
+      ></a>
+    </div>
+  </body>
+</html>

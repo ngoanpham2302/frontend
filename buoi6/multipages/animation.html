@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiệu ứng động</title>
+    <style>
+      .rect {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+
+        /* chỉ áp dụng cho border-radius, không áp dụng cho thuộc tính khác */
+        /* transition-property: border-radius; */
+
+        /* áp dụng cho tất cả các thuộc tính */
+        /* transition-property: all; */
+
+        /* transition-property: border-radius, background-color; */
+        /* Đơn vị thời gian: ms hoặc s */
+        transition-duration: 2s, 5s;
+
+        /* transition là shorthand của: */
+        /* transition-property: width;
+        transition-duration: 2s;
+        transition-timing-function: linear;
+        transition-delay: 1s; */
+
+        transition: all 2s linear 1s;
+      }
+
+      .rect:hover {
+        border-radius: 50px;
+        background-color: yellow;
+      }
+
+      .button {
+        margin-top: 100px;
+        width: 200px;
+        height: 50px;
+        padding: 10px;
+        font-size: 20px;
+        background-color: blue;
+        color: white;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+      }
+
+      .button:hover {
+        background-color: green;
+        border-radius: 35px;
+      }
+
+      .rect1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-top: 20px;
+        transition: all 2s;
+      }
+
+      .rect1:hover {
+        opacity: 0.5;
+        /* scale: tăng giảm kích thước */
+        /* transform: scale(1.1); */
+
+        /* translate: dịch chuyển */
+        /* transform: translate(20px, 0); */
+
+        /* rotate: xoay */
+        transform: rotate(45deg);
+      }
+
+      /* Animation */
+
+      .rect2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-top: 20px;
+
+        /* Chuyển đều từ red qua yellow rồi từ yellow về red */
+        /* animation: change-color 2s alternate; */
+        /* animation: change-color 1s infinite; */
+        animation: rotation 4s infinite;
+      }
+
+      @keyframes change-color {
+        from {
+          background-color: red;
+        }
+        to {
+          background-color: yellow;
+        }
+      }
+
+      @keyframes rotation {
+        20% {
+          transform: rotate(72deg);
+        }
+
+        40% {
+          transform: rotate(128deg);
+        }
+
+        60% {
+          transform: rotate(210deg);
+        }
+
+        80% {
+          transform: rotate(260deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect"></div>
+
+    <div class="button">LOGIN</div>
+
+    <div class="rect1"></div>
+
+    <div class="rect2"></div>
+  </body>
+</html>
