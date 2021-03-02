@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#task-1,
+#task-2,
+#task-3 {
+  background-color: #ddd;
+  margin: 0 auto 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Task 1 - Image Hover */
+
+#image-gallery {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 510px;
+}
+
+.image {
+  width: 160px;
+  height: 160px;
+  margin: 5px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.image:hover {
+  transform: scale(1.4);
+}
+
+/* Task 2 - Beating Heart */
+
+#beating-heart {
+  padding: 80px 0;
+}
+
+.heart {
+  position: relative;
+  height: 240px;
+  width: 160px;
+  border-radius: 80px 80px 0 0;
+  animation: beat 1.1s infinite;
+}
+
+.heart::before,
+.heart::after {
+  background-color: #fe7a74;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 80px 80px 0 0;
+}
+
+.heart::before {
+  left: 80px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart::after {
+  right: 80px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@keyframes beat {
+  20% {
+    transform: scale(1.2);
+  }
+
+  60% {
+    transform: none;
+  }
+
+  80% {
+    transform: scale(1.12);
+  }
+}
+
+/* Task 3 - Animated Words */
+
+#animated-words {
+  padding: 80px 0;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+  color: #35383a;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.word::before {
+  display: block;
+  height: 100%;
+  color: #fff;
+  content: "Coding";
+  background-color: #e2811f;
+  animation: animated 1.8s infinite;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.8), 0 -1px 1px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes animated {
+  0% {
+    content: "Coding";
+    background-color: #e2811f;
+    transform: scale(0.7);
+  }
+
+  20% {
+    content: "Coding";
+    background-color: #e2811f;
+    transform: scale(1);
+  }
+
+  70% {
+    content: "Teaching";
+    background-color: #5a3294;
+    transform: scale(1);
+  }
+
+  100% {
+    content: "Learning";
+    background-color: #228a4c;
+    transform: scale(1);
+  }
+}
