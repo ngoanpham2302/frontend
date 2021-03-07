@@ -103,21 +103,26 @@
 .footer-menu {
   width: 100%;
   height: 60px;
-  margin-bottom: 50px;
   background-color: #f7f2ee;
   color: #333;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+.nav-menu-container,
+.footer-menu-container {
+  height: 100%;
+  max-width: 1250px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
 .header-menu,
 .footer-menu-list {
-  max-width: 1250px;
   height: 100%;
-  margin: auto 50px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .menu-item:not(:last-child) {
