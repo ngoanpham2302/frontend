@@ -1,0 +1,18 @@
+/* how to section */
+
+.how-to,
+.insta-image-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.how-to-item {
+  width: 25%;
+}
+
+/* insta images section */
+
+.insta-image-list img {
+  width: 20%;
+}

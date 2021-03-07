@@ -1,0 +1,26 @@
+/* Footer */
+
+/* Footer Menu */
+
+.footer-menu {
+  height: 80px;
+  margin-bottom: 0;
+}
+
+.footer-menu-item {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.footer-menu-link {
+  letter-spacing: 1px;
+}
+
+.copyright {
+  padding: 30px;
+  text-align: center;
+  color: #7b7b7b;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
