@@ -4,55 +4,59 @@
 // Từ độ °C sang °F
 function celToFah(c) {
   let tempF = c * 1.8 + 32;
-  console.log(`${c}°C tương đương ${tempF}°F`);
+  return tempF;
 }
 
-celToFah(35);
+console.log(celToFah(35));
 
 // Từ độ °F sang °C
 function fahToCel(f) {
   let tempC = (f - 32) / 1.8;
-  console.log(`${f}°F tương đương ${tempC}°C`);
+  return tempC;
 }
 
-fahToCel(86);
+console.log(fahToCel(86));
 
 // Bài 2: Viết hàm chuyển đổi tiền tệ: chuyển đổi từ USD, Euro sang VNĐ và ngược lại
 
 // Từ USD sang VND
 function usdToVnd(usd) {
   let vnd = usd * 23048.72;
-  console.log(`${usd} USD bằng ${vnd} VND`);
+  return vnd;
 }
 
-usdToVnd(24);
+console.log(usdToVnd(24));
 
 // Từ EURO sang VND
 function euroToVnd(euro) {
   let vnd = euro * 27419.22;
-  console.log(`${euro} EURO bằng ${vnd} VND`);
+  return vnd;
 }
 
-euroToVnd(32);
+console.log(euroToVnd(32));
 
-// Từ VND sang USD, EURO
-function convertVnd(vnd) {
+// Từ VND sang USD
+function VndToUsd(vnd) {
   let usd = (vnd / 23048.72).toFixed(2);
-  let euro = (vnd / 27419.22).toFixed(2);
-
-  console.log(`${vnd} VND bằng ${usd} USD`);
-  console.log(`${vnd} VND bằng ${euro} EURO`);
+  return usd;
 }
 
-convertVnd(500000);
+console.log(VndToUsd(500000));
+
+// Từ VND sang EURO
+function VndToEuro(vnd) {
+  let euro = (vnd / 27419.22).toFixed(2);
+  return euro;
+}
+
+console.log(VndToEuro(250000));
 
 // Bài 3. Viết function tính thế kỷ của 1 năm. Biết thế kỷ thứ nhất tính từ năm 1 đến 100.
 
 function calCentury(year) {
   let century = Math.floor((year - 1) / 100) + 1;
-  console.log(`Năm ${year} thuộc thế kỷ ${century}`);
+  return century;
 }
 
-calCentury(1999);
-calCentury(2000);
-calCentury(2021);
+console.log(calCentury(2000));
+console.log(calCentury(2021));
