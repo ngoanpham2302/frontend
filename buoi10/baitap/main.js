@@ -7,17 +7,17 @@
 
 function findSeason() {
   let date = new Date();
-  let month = date.getMonth();
+  let month = date.getMonth() + 1;
 
-  if (month < 0 || month > 11) {
+  if (month < 1 || month > 12) {
     return "Tháng không hợp lệ";
   }
 
-  if (month <= 2) {
+  if (month <= 3) {
     return "Mùa xuân";
-  } else if (month <= 5) {
+  } else if (month <= 6) {
     return "Mùa hè";
-  } else if (month <= 8) {
+  } else if (month <= 9) {
     return "Mùa thu";
   } else {
     return "Mùa đông";
