@@ -8,6 +8,7 @@
 function findSeason() {
   let date = new Date();
   let month = date.getMonth() + 1;
+  console.log(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
 
   if (month < 1 || month > 12) {
     return "Tháng không hợp lệ";
