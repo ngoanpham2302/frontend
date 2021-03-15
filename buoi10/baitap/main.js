@@ -31,17 +31,23 @@ console.log(findSeason());
 Lưu ý: Với tháng 2 có 29 ngày nếu là năm nhuận, 28 ngày nếu là năm không nhuận.
  */
 
+function isLeapYear(year) {
+  if ((year % 100 !== 0 && year % 4 === 0) || year % 400 === 0) {
+    return true;
+  }
+  return false;
+}
+
 function daysInMonth(month, year) {
-  if (month < 1 || month > 12) {
-    return "Tháng không hợp lệ";
+  if (month < 1 || month > 12 || year < 1) {
+    return "Dữ liệu không hợp lệ";
   }
 
   if (month === 2) {
-    if ((year % 100 !== 0 && year % 4 === 0) || year % 400 === 0) {
+    if (isLeapYear(year)) {
       return `Tháng 2 năm ${year} có 29 ngày`;
-    } else {
-      return `Tháng 2 năm ${year} có 28 ngày`;
     }
+    return `Tháng 2 năm ${year} có 28 ngày`;
   } else if (month === 4 || month === 6 || month === 9 || month === 11) {
     return `Tháng ${month} có 30 ngày`;
   } else {
