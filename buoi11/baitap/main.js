@@ -1,5 +1,4 @@
-/* Bài 1. Cho một số nguyên dương N, viết hàm in ra màn hình những số hoàn hảo nhỏ hơn N (số hoàn hảo là số bằng tổng các ước số của nó mà không kể chính nó).
- */
+/* Bài 1. Cho một số nguyên dương N, viết hàm in ra màn hình những số hoàn hảo nhỏ hơn N (số hoàn hảo là số bằng tổng các ước số của nó mà không kể chính nó). */
 console.log("Bài 1: ");
 
 // Hàm check 1 số có phải số hoàn hảo không
@@ -36,12 +35,10 @@ function printPerfectNumbers(n) {
 
 printPerfectNumbers(500);
 
-/* Bài 2. Tìm số nhỏ nhất và lớn nhất trong mảng số nguyên
- */
-console.log("Bài 2:");
+/* Bài 2. Tìm số nhỏ nhất và lớn nhất trong mảng số nguyên */
 
 // Cách 1: Dùng vòng lặp for
-console.log("Cách 1: Dùng vòng lặp for:");
+console.log("Bài 2. Cách 1: Dùng vòng lặp for:");
 
 // Tìm số nhỏ nhất trong mảng số nguyên
 
@@ -90,8 +87,7 @@ function findSecondMax(arr) {
 
 console.log(findSecondMax(array));
 
-/* Bài 4. Trả về Vị trí đầu tiên của số lẻ, vị trí cuối cùng của số chẵn trong mảng bất kì.
- */
+/* Bài 4. Trả về Vị trí đầu tiên của số lẻ, vị trí cuối cùng của số chẵn trong mảng bất kì. */
 console.log("Bài 4:");
 
 // Trả về vị trí đầu tiên của số lẻ trong mảng
@@ -119,8 +115,7 @@ let arrayOne = [-3.5, -5, 11, -4, 0, 7.6, 8, -10, 9, -15, 6.4];
 console.log(findFirstOdd(arrayOne));
 console.log(findLastEven(arrayOne));
 
-/* Bài 5. In một chuỗi cho trước theo thứ tự ngược lại (Ví dụ: Hello in thành olleH)
- */
+/* Bài 5. In một chuỗi cho trước theo thứ tự ngược lại (Ví dụ: Hello in thành olleH) */
 console.log("Bài 5:");
 
 function reverseString(str) {
@@ -134,12 +129,10 @@ function reverseString(str) {
 
 console.log(reverseString("Hello, how are you?"));
 
-/* Bài 6. Sắp xếp mảng số nguyên theo chiều tăng dần và giảm dần.
- */
-console.log("Bài 6:");
+/* Bài 6. Sắp xếp mảng số nguyên theo chiều tăng dần và giảm dần. */
 
 // Cách 1: Dùng vòng lặp for
-console.log("Cách 1: Dùng vòng lặp for:");
+console.log("Bài 6. Cách 1: Dùng vòng lặp for:");
 
 // Sắp xếp mảng số nguyên theo chiều tăng dần
 
@@ -193,7 +186,6 @@ function findMinMax(arr) {
 
 console.log(findMinMax(array));
 
-// Cách 2: Dùng sort
 console.log("Bài 6. Cách 2: Dùng sort:");
 
 let arrayTwo = [-5, 30, -43, 60, 4, 18, -37, 62, 0, -39, 8, 6];
