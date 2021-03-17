@@ -4,13 +4,13 @@ console.log("Bài 1: ");
 // Hàm check 1 số có phải số hoàn hảo không
 
 function isPerfectNumber(x) {
-  if (x.isInteger === false || x <= 0) {
+  if (Number.isInteger(x) === false || x <= 0) {
     return false;
   }
 
   let sumDivisors = 0;
 
-  for (let i = 1; i < x; i++) {
+  for (let i = 1; i <= x / 2; i++) {
     if (x % i === 0) {
       sumDivisors += i;
     }
@@ -22,7 +22,7 @@ function isPerfectNumber(x) {
 // Hàm in ra những số hoàn hảo nhỏ hơn n
 
 function printPerfectNumbers(n) {
-  if (n.isInteger === false || n <= 0) {
+  if (Number.isInteger(n) === false || n <= 0) {
     return;
   }
 

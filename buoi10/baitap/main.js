@@ -60,7 +60,7 @@ console.log(daysInMonth(2, 2020));
 // Bài 3. Tính tổng các chữ số trong 1 số nguyên dương.
 
 function sumDigits(n) {
-  if (n.isInteger === false || n <= 0) {
+  if (Number.isInteger(n) === false || n <= 0) {
     return;
   }
 
