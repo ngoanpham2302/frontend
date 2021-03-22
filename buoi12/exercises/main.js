@@ -153,7 +153,7 @@ console.log(isPalindrome(9898));
 
 /* Bài 5. Viết chương trình tính tiền cước TAXI. Biết rằng:
 Giá cước khi mở cửa là 9.000 đồng/km.
-Giá cước từ km đầu tiên cho đến km thứ 30 là 11.000 đồng/km.
+Giá cước từ km số 2 cho đến km thứ 30 là 11.000 đồng/km.
 Giá cước là 9.500 đồng/km tính từ km thứ 31.
 Thời gian chờ: 20.000 đồng/tiếng. */
 console.log("Bài 5:");
@@ -169,14 +169,17 @@ function calTaxiFare(distance, wait) {
   let fare;
 
   if (distance <= 1) {
-    fare = 9000 + 20000 * wait;
+    fare = 9000;
   } else if (distance <= 30) {
-    fare = 9000 + 11000 * (distance - 1) + 20000 * wait;
+    fare = 9000 + 11000 * (distance - 1);
   } else {
-    fare = 9000 + 11000 * (30 - 1) + 9500 * (distance - 30) + 20000 * wait;
+    fare = 9000 + 11000 * (30 - 1) + 9500 * (distance - 30);
   }
+
+  // Cộng thêm tiền chờ:
+  fare += 20000 * wait;
 
   return `Tiền cước taxi đi ${distance} km, chờ ${wait} tiếng là ${fare} đồng.`;
 }
 
-console.log(calTaxiFare(55, 2));
+console.log(calTaxiFare(55, 2.5));
