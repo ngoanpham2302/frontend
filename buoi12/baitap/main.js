@@ -11,20 +11,20 @@ function countCalculations(n) {
 
   let count = 0;
 
+  // Trường hợp n nhập vào = 1;
   if (n === 1) {
     count++;
     n = n * 3 + 1;
   }
 
-  do {
+  while (n > 1) {
     if (n % 2 === 0) {
-      count++;
       n /= 2;
     } else {
-      count++;
       n = n * 3 + 1;
     }
-  } while (n > 1);
+    count++;
+  }
 
   if (count) {
     return count;
