@@ -47,7 +47,8 @@ function drawSolidReact(m, n) {
     Number.isInteger(m) === false ||
     Number.isInteger(n) === false
   ) {
-    return "Thông số đầu vào không hợp lệ";
+    document.write("Thông số đầu vào không hợp lệ");
+    return;
   }
 
   let str = "";
@@ -76,7 +77,8 @@ function drawEmptyReact(m, n) {
     Number.isInteger(m) === false ||
     Number.isInteger(n) === false
   ) {
-    return "Thông số đầu vào không hợp lệ";
+    document.write("Thông số đầu vào không hợp lệ");
+    return;
   }
 
   let str = "";
@@ -120,7 +122,8 @@ function drawRightTriangle(n) {
   document.writeln("<br /><br />");
 
   if (n <= 0 || Number.isInteger(n) === false) {
-    return "Thông số đầu vào không hợp lệ";
+    document.write("Thông số đầu vào không hợp lệ");
+    return;
   }
 
   let str = "";
@@ -141,12 +144,14 @@ drawRightTriangle(5);
 /* Bài 5. Vẽ tam giác cân ngược: */
 
 document.writeln("Bài 5. Vẽ tam giác cân ngược");
+// Vẽ tam giác cân ngược có chiều cao h:
 
 function drawIsoTriangle(h) {
   document.writeln("<br /><br />");
 
   if (h <= 0 || Number.isInteger(h) === false) {
-    return "Thông số đầu vào không hợp lệ";
+    document.write("Thông số đầu vào không hợp lệ");
+    return;
   }
 
   let str = "";
