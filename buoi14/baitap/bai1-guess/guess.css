@@ -1,0 +1,41 @@
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+}
+
+.container {
+  margin-top: 30px;
+  padding: 10px 20px;
+  width: 500px;
+  text-align: center;
+  background-color: rgb(199, 247, 247);
+}
+
+.noti {
+  font-size: 22px;
+  font-weight: 600;
+  color: green;
+}
+
+.input,
+.btn {
+  padding: 5px;
+}
+
+.btn {
+  width: 60px;
+}
+
+.input,
+.btn-guess {
+  margin-right: 5px;
+}
+
+.input:focus {
+  outline: none;
+}
