@@ -137,29 +137,18 @@ console.log("Bài 5:");
 
 // Cách 1: Dùng for
 
-function findMaxLength(arr) {
-  let lenArr = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    lenArr.push(arr[i].length);
-  }
-
-  let maxLength = lenArr[0];
-
-  for (let j = 0; j < lenArr.length; j++) {
-    if (lenArr[j] > maxLength) {
-      maxLength = lenArr[j];
-    }
-  }
-
-  return maxLength;
-}
-
 function findLongestEle(arr) {
+  let maxLength = arr[0].length;
   let maxLenArr = [];
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length === findMaxLength(arr)) {
+    if (arr[i].length > maxLength) {
+      maxLength = arr[i].length;
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length === maxLength) {
       maxLenArr.push(arr[i]);
     }
   }
@@ -167,17 +156,15 @@ function findLongestEle(arr) {
   return maxLenArr;
 }
 
-let arrayOne = ["abdc", "dgv", "ahhn", "gh", "cdg", "hrte", "h"];
+let arrayOne = ["dgv", "bn", "ahhn", "gh", "abdc", "cdg", "hrte", "h"];
 
 console.log(findLongestEle(arrayOne));
 
-// Cách 2: Dùng map, filter, sort
+// Cách 2: Dùng sort, filter
 
 function findLongestElement(arr) {
-  let lenArr = arr.map((value) => value.length);
-
-  lenArr.sort((a, b) => a - b);
-  let maxLength = lenArr[lenArr.length - 1];
+  arr.sort((a, b) => a.length - b.length);
+  let maxLength = arr[arr.length - 1].length;
 
   let maxLenArr = arr.filter((value) => value.length === maxLength);
 
