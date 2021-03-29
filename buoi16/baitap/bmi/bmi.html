@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI</title>
+    <link rel="stylesheet" href="./bmi.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-box">
+        <h1 class="title">Tính chỉ số cơ thể BMI</h1>
+
+        <div class="input-box">
+          <input
+            type="text"
+            class="input height"
+            placeholder="Nhập chiều cao (cm)"
+          />
+          <i class="fa fa-check-circle success-icon"></i>
+          <i class="fa fa-exclamation-circle error-icon"></i>
+          <small class="alert alert-height">Error message</small>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="text"
+            class="input weight"
+            placeholder="Nhập cân nặng (kg)"
+          />
+          <i class="fa fa-check-circle success-icon"></i>
+          <i class="fa fa-exclamation-circle error-icon"></i>
+          <small class="alert alert-weight">Error message</small>
+        </div>
+
+        <div class="buttons">
+          <button class="cal-btn btn" onclick="calBmi()">Tính BMI</button>
+          <button class="reset-btn btn" onclick="reset()">Reset</button>
+        </div>
+      </div>
+
+      <div class="right-box">
+        <div class="definition">
+          <p class="sub-title">Chỉ số BMI là gì?</p>
+          <p class="description">
+            Chỉ số BMI (Body Mass Index) hay còn gọi là chỉ số khối cơ thể, chỉ
+            số thể trọng, là một công cụ thường được sử dụng để đo lượng mỡ
+            trong cơ thể. Chỉ số BMI chuẩn được tính dựa trên chiều cao và cân
+            nặng, áp dụng cho nam và nữ trưởng thành.
+          </p>
+        </div>
+
+        <div class="result">
+          <p class="bmi-result"></p>
+          <p class="message"></p>
+          <p class="advice"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./bmi.js"></script>
+  </body>
+</html>

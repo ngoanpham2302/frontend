@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  color: #19456b;
+}
+
+.container {
+  margin-top: 100px;
+  width: 850px;
+  background-color: #fcf1f1;
+  border: 3px solid rgba(43, 86, 133, 0.8);
+  text-align: justify;
+  border-radius: 10px;
+  display: flex;
+}
+
+.left-box,
+.right-box {
+  width: 50%;
+  padding: 30px;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.input {
+  display: block;
+  height: 40px;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid rgba(43, 86, 133, 0.3);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid #2b5685;
+}
+
+.input.weight {
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 167px;
+  height: 40px;
+  padding: 10px 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(13, 51, 93, 0.5);
+  color: #fff;
+  background-color: #2b5685;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  color: #2b5685;
+  background-color: #fff;
+  border: 1px solid rgba(13, 51, 93, 0.2);
+  box-shadow: 0 0 6px rgba(13, 51, 93, 0.3);
+}
+
+.bmi-result,
+.sub-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.description,
+.advice {
+  line-height: 1.5;
+}
+
+.message {
+  margin-bottom: 20px;
+  font-style: italic;
+  font-weight: 600;
+  color: #8f4f4f;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.input-box.success input {
+  border-color: #2ecc71;
+}
+
+.input-box.error input {
+  border-color: #f83823;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box i {
+  position: absolute;
+  visibility: hidden;
+  top: 12px;
+  right: 10px;
+}
+
+.input-box.success .success-icon {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.input-box.error .error-icon {
+  color: #f83823;
+  visibility: visible;
+}
+
+.input-box small {
+  color: #f83823;
+  visibility: hidden;
+}
+
+.input-box.error small {
+  visibility: visible;
+}

@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 520px;
+  height: 265px;
+  margin-top: 100px;
+  padding: 30px;
+  border: 3px solid #79a3b1;
+  background-color: #e4fbff;
+  color: #456268;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.intro {
+  margin-bottom: 30px;
+}
+
+.input,
+.btn {
+  height: 35px;
+  padding: 5px;
+  color: #456268;
+  border-radius: 5px;
+  border: 1px solid rgba(44, 77, 87, 0.2);
+}
+
+.input {
+  width: 200px;
+}
+
+.btn {
+  width: 100px;
+  cursor: pointer;
+  background-color: #f1f6f9;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 5px rgba(44, 77, 87, 0.3);
+}
+
+.input,
+.cal-btn {
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: #456268;
+  color: #fff;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(44, 77, 87, 0.3);
+}
+
+.show-noti {
+  margin-top: 30px;
+  font-size: 18px;
+}
