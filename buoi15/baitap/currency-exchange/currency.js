@@ -44,6 +44,15 @@ function convertEur(amount, toCur) {
   return result;
 }
 
+// Set thông báo invalid input
+
+function setError(errorMessage) {
+  alertMess.style.visibility = "visible";
+  alertMess.innerText = errorMessage;
+  fromAmount.style.borderColor = "#ec0101";
+  toAmount.value = "";
+}
+
 // Chuyển đổi tiền tệ
 
 function convertCurrency() {
@@ -53,9 +62,9 @@ function convertCurrency() {
   let to;
 
   if (from === "") {
-    alertMess.style.visibility = "visible";
-    fromAmount.style.borderColor = "#ec0101";
-    toAmount.value = "";
+    setError("Vui lòng nhập số !");
+  } else if (from <= 0) {
+    setError("Vui lòng nhập số lớn hơn 0");
   } else {
     alertMess.style.visibility = "hidden";
     fromAmount.style.borderColor = "#393b44";
