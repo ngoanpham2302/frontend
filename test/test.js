@@ -6,9 +6,17 @@ function sumInt(a, b) {
     return;
   }
 
+  if (a === b) {
+    return 0;
+  }
+
   // Tìm số lớn hơn, nhỏ hơn giữa a và b
-  let max = Math.max(a, b);
-  let min = Math.min(a, b);
+  let min, max;
+  if (a !== b) {
+    max = Math.max(a, b);
+    min = Math.min(a, b);
+  }
+
   let sum = 0;
 
   for (let i = min + 1; i < max; i++) {
@@ -107,13 +115,20 @@ function countDays(h, x, y) {
     return;
   }
 
-  // Quãng đường con ốc sên bò được trong 1 ngày (ban ngày + ban đêm):
-  let s = x - y;
+  let day = 0;
 
-  // Số buổi ban ngày con ốc sên bò lên đến miệng giếng:
-  let day = (h - x) / s + 1;
+  while (h > 0) {
+    day++;
 
-  return `Sau ${day} ngày để ốc sên bò lên đến miệng giếng.`;
+    // Do ngày cuối cùng ban ngày ốc sên đã bò lên đến miệng giếng rồi, không tính bị tụt xuống ban đêm nữa.
+    if (h - x === 0) {
+      h = h - x;
+    } else {
+      h = h - x + y;
+    }
+  }
+
+  return `Sau ${day} ngày ốc sên sẽ bò lên đến miệng giếng.`;
 }
 
 console.log(countDays(10, 4, 2));
