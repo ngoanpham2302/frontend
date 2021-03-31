@@ -71,15 +71,16 @@ function displayTime(t, x) {
       newMinute = minute;
     } else {
       newSecond = second + x - 60;
-      if (minute + x <= 59) {
+      if (minute + 1 <= 59) {
         newMinute = minute + 1;
         newHour = hour;
       } else {
-        newMinute = minute + x - 60;
+        newMinute = minute + 1 - 60;
         newHour = hour + 1;
       }
     }
   } else {
+    // Do x <= 1000 nên không cần thêm tham số giờ
     let m = Math.round(x / 60);
     let s = x % 60;
 
@@ -100,12 +101,18 @@ function displayTime(t, x) {
     }
   }
 
+  if (newHour === 24) {
+    newHour = 0;
+  }
+
   return `${toStr(newHour)}:${toStr(newMinute)}:${toStr(newSecond)}`;
 }
 
 console.log(displayTime("09:20:56", 7));
 console.log(displayTime("09:59:57", 7));
 console.log(displayTime("09:23:56", 70));
+console.log(displayTime("09:59:58", 70));
+console.log(displayTime("23:59:58", 5));
 
 /* Bài 4: Một con ốc sên leo từ đáy giếng lên miệng giếng, biết ban ngày leo được x mét, ban đêm lại bị tụt xuống y mét, hỏi sau bao nhiêu ngày thì ốc sên sẽ lên được đến miệng giếng. Viết hàm giải bài toán trên với 3 tham số h > 0 là chiều cao của giếng, x và y như mô tả trên (x > 0, y > 0). */
 console.log("Bài 4:");
