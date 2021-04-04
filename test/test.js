@@ -3,7 +3,7 @@ console.log("Bài 1:");
 
 function sumInt(a, b) {
   if (Number.isInteger(a) === false || Number.isInteger(b) === false) {
-    return;
+    return "Dữ liệu nhập vào không hợp lệ";
   }
 
   if (a === b) {
@@ -44,68 +44,55 @@ console.log(toSpinalCase("HELLo MonDAy TuesdAy"));
 console.log("Bài 3:");
 
 function toStr(num) {
-  let str = "";
-
-  if (num < 10) {
-    str = "0" + num;
-  } else {
-    str = "" + num;
+  if (num >= 0 && num <= 9) {
+    return `0${num}`;
   }
-  return str;
+  return `${num}`;
 }
 
 function displayTime(t, x) {
-  if (x < 0 || x > 1000) {
-    return "Tham số nhập vào chưa hợp lệ";
+  let time = t.split(":");
+
+  if (
+    time.length !== 3 ||
+    Number.isInteger(+time[0]) === false ||
+    Number.isInteger(+time[1]) === false ||
+    Number.isInteger(+time[2]) === false ||
+    Number.isInteger(x) === false
+  ) {
+    return "Dữ liệu nhập vào không hợp lệ.";
   }
 
-  let second = parseInt(t[t.length - 2] + t[t.length - 1]);
-  let minute = parseInt(t[3] + t[4]);
-  let hour = parseInt(t[0] + t[1]);
+  let hour = parseInt(time[0]);
+  let minute = parseInt(time[1]);
+  let second = parseInt(time[2]);
 
-  let newSecond, newMinute, newHour;
+  if (
+    x < 0 ||
+    x > 1000 ||
+    hour < 0 ||
+    hour > 23 ||
+    minute < 0 ||
+    minute > 59 ||
+    second < 0 ||
+    second > 59
+  ) {
+    return "Dữ liệu nhập vào không hợp lệ.";
+  }
 
-  if (x < 60) {
-    if (second + x <= 59) {
-      newSecond = second + x;
-      newMinute = minute;
-    } else {
-      newSecond = second + x - 60;
-      if (minute + 1 <= 59) {
-        newMinute = minute + 1;
-        newHour = hour;
-      } else {
-        newMinute = minute + 1 - 60;
-        newHour = hour + 1;
-      }
-    }
+  let totalSeconds = hour * 3600 + minute * 60 + second + x;
+
+  // Tính giờ, phút, giây mới sau khi cộng thêm x giây:
+  hour = Math.floor(totalSeconds / 3600);
+  minute = Math.floor((totalSeconds % 3600) / 60);
+  second = totalSeconds % 60;
+
+  if (hour >= 24) {
+    hour = hour - 24;
+    return `${toStr(hour)}:${toStr(minute)}:${toStr(second)} ngày hôm sau`;
   } else {
-    // Do x <= 1000 nên không cần thêm tham số giờ
-    let m = Math.round(x / 60);
-    let s = x % 60;
-
-    if (second + s <= 59) {
-      newSecond = second + s;
-      newMinute = minute;
-    } else {
-      newSecond = second + s - 60;
-      newMinute = minute + m;
-    }
-
-    if (minute + m <= 59) {
-      newMinute = newMinute + m;
-      newHour = hour;
-    } else {
-      newMinute = newMinute + m - 60;
-      newHour = hour + 1;
-    }
+    return `${toStr(hour)}:${toStr(minute)}:${toStr(second)}`;
   }
-
-  if (newHour === 24) {
-    newHour = 0;
-  }
-
-  return `${toStr(newHour)}:${toStr(newMinute)}:${toStr(newSecond)}`;
 }
 
 console.log(displayTime("09:20:56", 7));
@@ -118,8 +105,16 @@ console.log(displayTime("23:59:58", 5));
 console.log("Bài 4:");
 
 function countDays(h, x, y) {
-  if (h <= 0 || x <= 0 || y <= 0 || x <= y) {
-    return;
+  if (h <= 0 || x <= 0 || y <= 0) {
+    return "Dữ liệu nhập vào không hợp lệ";
+  }
+
+  if (h <= x) {
+    return "Ốc sên chỉ cần nửa buổi ban ngày là sẽ bò lên đến miệng giếng.";
+  }
+
+  if (x <= y) {
+    return "Ốc sên không bao giờ bò ra khỏi miệng giếng được.";
   }
 
   let day = 0;
@@ -128,7 +123,7 @@ function countDays(h, x, y) {
     day++;
 
     // Do ngày cuối cùng ban ngày ốc sên đã bò lên đến miệng giếng rồi, không tính bị tụt xuống ban đêm nữa.
-    if (h - x === 0) {
+    if (h - x <= 0) {
       h = h - x;
     } else {
       h = h - x + y;
@@ -145,7 +140,7 @@ console.log("Bài 5:");
 
 function sortDigits(n) {
   if (Number.isInteger(n) === false || n <= 0) {
-    return;
+    return "Số nhập vào không hợp lệ";
   }
 
   let arr = [];
@@ -158,15 +153,20 @@ function sortDigits(n) {
   arr.sort((a, b) => a - b);
 
   if (arr[0] === 0) {
-    arr[0] = arr[1];
-    arr[1] = 0;
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] > 0) {
+        let item = arr.splice(i, 1);
+        arr.unshift(item);
+        break;
+      }
+    }
   }
 
-  return arr.join("");
+  return parseInt(arr.join(""));
 }
 
-console.log(sortDigits(530751));
-console.log(sortDigits(536751));
+console.log(sortDigits(536051317));
+console.log(sortDigits(30015006));
 
 /* Bài 6: Tạo 1 trang HTML có một nút để thay đổi màu nền của trang web và hiển thị tên màu tương ứng. Random màu bất kỳ, sử dụng mã hex, biết rằng, mã hex được tạo thành từ các ký tự sau [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F']. */
 console.log("Bài 6:");
