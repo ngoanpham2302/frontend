@@ -19,6 +19,7 @@ function clearEntry() {
 
 // Display Expression
 function display(value) {
+  // Không cho phép đóng ngoặc khi chưa nhập biểu thức
   if (result.innerHTML == "") {
     if (value == ")") {
       value = "";
@@ -33,14 +34,15 @@ function display(value) {
     }
 
     if (
-      value == "^" ||
+      value == "^3" ||
       value == "%" ||
       value == "^2" ||
       value == "." ||
       value == "+" ||
       value == "-" ||
       value == "×" ||
-      value == "÷"
+      value == "÷" ||
+      value == "!"
     ) {
       value = "0" + value;
     }
@@ -53,9 +55,9 @@ function display(value) {
 function calculate() {
   let cal = result.innerHTML;
 
-  cal = cal.replace(/×/g, "*");
-  cal = cal.replace(/÷/g, "/");
-  cal = cal.replace(/%/g, "/100");
+  cal = cal.replace(/ × /g, " * ");
+  cal = cal.replace(/ ÷ /g, " / ");
+  cal = cal.replace(/%/g, "/ 100");
   cal = cal.replace(/\^2/g, "**2");
   cal = cal.replace(/\^3/g, "**3");
   cal = cal.replace(/π/g, "Math.PI");
@@ -63,6 +65,7 @@ function calculate() {
   cal = cal.replace(/√\(/g, "Math.sqrt(");
   cal = cal.replace(/log\(/g, "Math.log10(");
   cal = cal.replace(/ln\(/g, "Math.log(");
+  cal = calFacExp(cal);
 
   let answer = eval(cal);
 
@@ -70,15 +73,40 @@ function calculate() {
     alert("Biểu thức nhập vào không hợp lệ!");
     return;
   } else {
-    expression.innerHTML = result.innerHTML + "=";
+    expression.innerHTML = result.innerHTML + " =";
     result.innerHTML = answer;
   }
 }
 
-// Tính giai thừa
+// Tính giai thừa của biểu thức có chứa giai thừa
 
-function calFactorial(n) {
-  if (Number.isInteger(n) === false || n < 0) {
+function calFacExp(str) {
+  let startIndex = 0;
+  let pos;
+
+  do {
+    let num = "";
+    pos = str.indexOf("!", startIndex);
+
+    if (pos != -1) {
+      startIndex = pos + 1;
+      let i;
+      for (i = pos - 1; i >= 0; i--) {
+        if (str[i] == " " || i == 0) break;
+      }
+      num = str.slice(i, pos);
+      let factorial = calFac(+num);
+      str = str.replace(num + "!", factorial);
+    }
+  } while (pos != -1);
+
+  return str;
+}
+
+// Tính giai thừa của 1 số
+
+function calFac(n) {
+  if (Number.isInteger(n) == false || n < 0) {
     alert("Biểu thức nhập vào không hợp lệ!");
     return;
   }
@@ -93,3 +121,6 @@ function calFactorial(n) {
   }
   return fac;
 }
+
+// Bổ sung đóng ngoặc
+// Xử lý >=2 dấu phép tính liền nhau
