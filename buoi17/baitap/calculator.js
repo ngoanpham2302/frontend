@@ -85,6 +85,8 @@ function calculate() {
   }
 }
 
+// Tính toán đối với các phép tính đặc biệt
+
 // Tính từng giai thừa trong 1 biểu thức (do có thể nhập vào 1 biểu thức dài có chứa 1 hoặc nhiều giai thừa)
 
 // Thực hiện lặp qua chuỗi biểu thức được nhập vào, tìm các vị trí có xuất hiện giai thừa, tính toán trả về kết quả của giai thừa ngay tại đó
@@ -105,8 +107,11 @@ function calFacExp(str) {
       startIndex = pos + 1;
 
       let i;
-      for (i = pos - 1; i >= 0; i--) {
-        if (str[i] == " " || i == 0) break;
+      // Xử lý trường hợp không có dấu ngoặc () ngay trước "!"
+      if (str.charAt(pos - 1) != ")") {
+        for (i = pos - 1; i >= 0; i--) {
+          if (str[i] == " " || i == 0) break;
+        }
       }
 
       num = str.slice(i, pos);
@@ -137,8 +142,8 @@ function calFac(n) {
   return fac;
 }
 
-// Bổ sung tự đóng ngoặc
-// Xử lý trường hợp xuất hiện dấu ngoặc trong biểu thức giai thừa
+// Bổ sung tính năng tự đóng ngoặc
+// Xử lý trường hợp xuất hiện dấu ngoặc trong biểu thức có giai thừa
 // Xử lý khi >=2 dấu phép tính liền nhau
 // Thêm dấu +/- cho số âm
 // Validate input (1 số trường hợp nhập sai khác)
