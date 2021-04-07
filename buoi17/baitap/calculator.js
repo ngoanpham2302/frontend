@@ -78,7 +78,7 @@ function calculate() {
   }
 }
 
-// Tính giai thừa của biểu thức có chứa giai thừa
+// Tính giai thừa trong biểu thức có chứa 1 hoặc nhiều giai thừa
 
 function calFacExp(str) {
   let startIndex = 0;
@@ -124,3 +124,4 @@ function calFac(n) {
 
 // Bổ sung đóng ngoặc
 // Xử lý >=2 dấu phép tính liền nhau
+// Thêm dấu +/- cho số âm
