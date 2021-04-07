@@ -1,5 +1,8 @@
-let expression = document.querySelector(".expression");
+// Màn hình hiển thị biểu thức lúc nhập và kết quả sau khi tính
 let result = document.querySelector(".result");
+
+// Màn hình lưu lại biểu thức đã nhập (sau khi ấn nút =)
+let expression = document.querySelector(".expression");
 
 // Btn AC
 function allClear() {
@@ -15,24 +18,23 @@ function clearEntry() {
   }
 }
 
-// Validate input
-
 // Display Expression
 function display(value) {
-  // Không cho phép đóng ngoặc khi chưa nhập biểu thức
+  // Không cho phép đóng ngoặc khi chưa nhập biểu thức (lúc chưa có giá trị nhập vào)
   if (result.innerHTML == "") {
     if (value == ")") {
       value = "";
     }
   }
+
   // Xử lý ban đầu khi nhập vào có số 0
   if (result.innerHTML === "0") {
-    result.innerHTML = "";
-
+    // Không cho phép đóng ngoặc khi chưa nhập biểu thức (lúc màn hình đang có số 0)
     if (value == ")") {
       value = "0";
     }
 
+    // Cho phép nhập các phép toán (có thể tính toán được) khi màn hình chỉ có số 0:
     if (
       value == "^3" ||
       value == "%" ||
@@ -46,6 +48,9 @@ function display(value) {
     ) {
       value = "0" + value;
     }
+
+    // Xóa số 0 khi bấm các button còn lại
+    result.innerHTML = "";
   }
 
   result.innerHTML += value;
@@ -55,6 +60,7 @@ function display(value) {
 function calculate() {
   let cal = result.innerHTML;
 
+  // Thay thế các button đặc biệt bằng các phép toán đúng
   cal = cal.replace(/ × /g, " * ");
   cal = cal.replace(/ ÷ /g, " / ");
   cal = cal.replace(/%/g, "/ 100");
@@ -69,6 +75,7 @@ function calculate() {
 
   let answer = eval(cal);
 
+  // Thông báo khi nhập vào biểu thức sai (VD: căn của số âm)
   if ((answer + "").includes("NaN")) {
     alert("Biểu thức nhập vào không hợp lệ!");
     return;
@@ -78,22 +85,30 @@ function calculate() {
   }
 }
 
-// Tính giai thừa trong biểu thức có chứa 1 hoặc nhiều giai thừa
+// Tính từng giai thừa trong 1 biểu thức (do có thể nhập vào 1 biểu thức dài có chứa 1 hoặc nhiều giai thừa)
+
+// Thực hiện lặp qua chuỗi biểu thức được nhập vào, tìm các vị trí có xuất hiện giai thừa, tính toán trả về kết quả của giai thừa ngay tại đó
 
 function calFacExp(str) {
+  // Vị trí bắt đầu lặp
   let startIndex = 0;
   let pos;
 
   do {
     let num = "";
+    // Vị trí của giai thừa trong biểu thức
     pos = str.indexOf("!", startIndex);
 
+    // Nếu trong biểu thức có chứa "!"
     if (pos != -1) {
+      // Tăng vị trí bắt đầu lặp lên 1 (chuẩn bị cho vòng lặp mới (nếu vẫn còn "!"))
       startIndex = pos + 1;
+
       let i;
       for (i = pos - 1; i >= 0; i--) {
         if (str[i] == " " || i == 0) break;
       }
+
       num = str.slice(i, pos);
       let factorial = calFac(+num);
       str = str.replace(num + "!", factorial);
@@ -122,6 +137,8 @@ function calFac(n) {
   return fac;
 }
 
-// Bổ sung đóng ngoặc
-// Xử lý >=2 dấu phép tính liền nhau
+// Bổ sung tự đóng ngoặc
+// Xử lý trường hợp xuất hiện dấu ngoặc trong biểu thức giai thừa
+// Xử lý khi >=2 dấu phép tính liền nhau
 // Thêm dấu +/- cho số âm
+// Validate input (1 số trường hợp nhập sai khác)
