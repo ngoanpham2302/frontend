@@ -148,6 +148,10 @@ body {
   width: 120px;
 }
 
+.hint {
+  cursor: pointer;
+}
+
 .diamonds {
   margin-right: 10px;
 }
@@ -185,6 +189,10 @@ body {
 
 .choice p {
   font-size: 18px;
+}
+
+.hint-choice {
+  text-decoration: line-through;
 }
 
 .btn {

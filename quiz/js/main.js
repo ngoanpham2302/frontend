@@ -148,7 +148,7 @@ function checkResult(choice) {
     $(".diamonds").html(`${diamonds}`);
 
     if (userCorrect == data.length) {
-      $(".end-title").html("Giỏi quá !");
+      $(".end-title").html("Thật xuất sắc !");
       $(".end-result").html(`Bạn đã trả lời đúng tất cả các câu hỏi.`);
     } else {
       $(".end-result").html(
@@ -163,7 +163,7 @@ $(".btn-submit").on("click", function () {
   $(".end-game").removeClass("hide");
   $(".quiz").addClass("hide");
 
-  let endSound = new Audio("../audio/winner-sound.mp3");
+  const endSound = new Audio("../audio/winner-sound.mp3");
   endSound.play();
 });
 
@@ -173,7 +173,7 @@ $(".play-again").on("click", function () {
 });
 
 // Countdown thời gian chơi game
-let time = 60;
+let time = 50;
 let interval = setInterval(countDown, 1000);
 
 function countDown() {
@@ -193,9 +193,43 @@ function countDown() {
     $(".quiz").addClass("hide");
     $(".end-title").html("Hết giờ !");
 
-    let endLose = new Audio("../audio/loser-sound.mp3");
+    const endLose = new Audio("../audio/loser-sound.mp3");
     endLose.play();
   }
 }
 
 // Button 50:50
+let allowHint = true;
+
+$(".hint").on("click", hint);
+
+function hint() {
+  if (allowHint) {
+    let curChoices = data[curQuestion].choices;
+    for (let i = 0; i < curChoices.length; i++) {
+      if (curChoices[i] == data[curQuestion].answer) {
+        curChoices.splice(i, 1);
+        break;
+      }
+    }
+
+    curChoices = curChoices.sort(() => Math.random() - 0.5);
+    let firstHint = curChoices[0];
+    let secondHint = curChoices[1];
+    console.log(curChoices[0]);
+    console.log(curChoices[1]);
+
+    let list = document.querySelectorAll(".choice p");
+
+    Array.from(list).forEach((item) => {
+      if (item.innerText == firstHint || item.innerText == secondHint) {
+        item.classList.add("hint-choice");
+        item.parentNode
+          .querySelector(".fa-times-circle")
+          .classList.remove("hide");
+      }
+    });
+  }
+  allowHint = false;
+  $(".hint").addClass("disable");
+}
