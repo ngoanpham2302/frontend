@@ -57,11 +57,11 @@ let data = [
 
 // Shuffle thứ tự các lựa chọn trong mảng choices
 for (let i = 0; i < data.length; i++) {
-  data[i].choices = data[i].choices.sort(() => Math.random() - 0.5);
+  data[i].choices.sort(() => Math.random() - 0.5);
 }
 
 // Shuffle thứ tự câu hỏi trong mảng data
-data = data.sort(() => Math.random() - 0.5);
+data.sort(() => Math.random() - 0.5);
 
 // Câu hỏi hiện tại (current question)
 let curQuestion = 0;
@@ -213,11 +213,9 @@ function hint() {
       }
     }
 
-    curChoices = curChoices.sort(() => Math.random() - 0.5);
+    curChoices.sort(() => Math.random() - 0.5);
     let firstHint = curChoices[0];
     let secondHint = curChoices[1];
-    console.log(curChoices[0]);
-    console.log(curChoices[1]);
 
     let list = document.querySelectorAll(".choice p");
 
