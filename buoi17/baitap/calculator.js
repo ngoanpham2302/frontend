@@ -81,7 +81,8 @@ function calculate() {
     return;
   } else {
     expression.innerHTML = result.innerHTML + " =";
-    result.innerHTML = answer;
+    // Thêm dấu phân tách số đối với các số lớn
+    result.innerHTML = Number(answer).toLocaleString("en-US");
   }
 }
 
@@ -112,9 +113,15 @@ function calFacExp(str) {
         for (i = pos - 1; i >= 0; i--) {
           if (str[i] == " " || i == 0) break;
         }
+        num = str.slice(i, pos);
+      } else {
+        for (i = pos - 1; i >= 0; i--) {
+          if (str[i] == "(") break;
+        }
+        num = eval(str.slice(i, pos));
       }
 
-      num = str.slice(i, pos);
+      // num = eval(str.slice(i, pos));
       let factorial = calFac(+num);
       str = str.replace(num + "!", factorial);
     }
@@ -142,8 +149,11 @@ function calFac(n) {
   return fac;
 }
 
-// Bổ sung tính năng tự đóng ngoặc
-// Xử lý trường hợp xuất hiện dấu ngoặc trong biểu thức có giai thừa
+// Bổ sung tính năng tự đóng ngoặc / không cho phép đóng ngoặc khi chưa có mở ngoặc
+// Xử lý trường hợp xuất hiện dấu ngoặc liền trước "!" trong biểu thức có giai thừa
 // Xử lý khi >=2 dấu phép tính liền nhau
 // Thêm dấu +/- cho số âm
 // Validate input (1 số trường hợp nhập sai khác)
+// CSS ẩn bớt số trên màn hình để không bị tràn màn hình
+// Xử lý khi bấm thiếu dấu phép tính (coi như dấu nhân)
+// Bổ sung phép tính số mũ x^y

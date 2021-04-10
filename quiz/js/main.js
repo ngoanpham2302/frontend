@@ -72,12 +72,12 @@ function renderQuestion(count) {
   // Lấy ra câu hỏi hiện tại
   let question = data[count];
 
-  // Cập nhật title, nội dung câu hỏi:
+  // Cập nhật title, nội dung câu hỏi
   $(".question-title").html(`Câu hỏi ${count + 1}/${data.length}`);
 
   $(".question-content").html(`${question.ask}`);
 
-  // Cập nhật các lựa chọn cho câu hỏi:
+  // Cập nhật các lựa chọn cho câu hỏi
   $(".choices-box")[0].innerHTML = "";
 
   for (let i = 0; i < question.choices.length; i++) {
@@ -100,76 +100,82 @@ function renderQuestion(count) {
   }
 
   // Cập nhật thanh tiến trình
-  $(".progress-bar").css(
-    "width",
-    `${((curQuestion + 1) / data.length) * 100}%`
-  );
+  $(".progress-bar").css("width", `${((count + 1) / data.length) * 100}%`);
 }
 
 renderQuestion(curQuestion);
 
-// Biến kiểm tra nếu người dùng trả lời mới cho next, không cho phép chọn lại đáp án
-let flag = false;
+// Biến kiểm tra nếu người dùng trả lời mới cho next, và không cho phép chọn lại đáp án (mặc định flag = false là chưa cho next và cho chọn đáp án)
+let allowNext = false;
 
 // Lắng nghe sự kiện nút "Câu hỏi tiếp"
-$(".btn-next").on("click", function () {
+$(".btn-next").on("click", () => {
   // Tăng câu hỏi lên 1, nếu là câu hỏi cuối cùng thì không tăng lên nữa
   if (curQuestion < data.length) {
-    if (flag) {
+    if (allowNext) {
       curQuestion++;
       if (curQuestion > data.length - 1) {
         curQuestion = data.length - 1;
       }
       renderQuestion(curQuestion);
-      flag = false;
+      allowNext = false;
     }
   }
 });
 
 // Check và show kết quả đúng sai cho từng câu hỏi, cập nhật diamond
 
-var userCorrect = 0;
-var diamonds = 0;
+let userCorrect = 0;
+let diamonds = 0;
 
 function checkResult(choice) {
-  if (!flag) {
+  if (!allowNext) {
     if (choice.firstElementChild.innerText == data[curQuestion].answer) {
       diamonds += 100;
       userCorrect++;
 
       choice.querySelector(".fa-check-circle").classList.remove("hide");
-      flag = true;
+      choice.classList.add("right-selected");
     } else {
       diamonds -= 50;
+
       choice.querySelector(".fa-times-circle").classList.remove("hide");
-      flag = true;
+      choice.classList.add("wrong-selected");
     }
 
+    choice.firstElementChild.style.opacity = "1";
+    choice.firstElementChild.classList.remove("hint-choice");
+
+    // Sau khi chọn đáp án thì cho phép next sang câu tiếp
+    allowNext = true;
+
+    // Cập nhật diamond, nội dung khi game end
     $(".diamonds").html(`${diamonds}`);
-
-    if (userCorrect == data.length) {
-      $(".end-title").html("Thật xuất sắc !");
-      $(".end-result").html(`Bạn đã trả lời đúng tất cả các câu hỏi.`);
-    } else {
-      $(".end-result").html(
-        `Bạn đã trả lời đúng ${userCorrect}/${data.length} câu hỏi.`
-      );
-    }
+    renderGameEnd();
   }
 }
 
-// Sau khi trả lời hết, người dùng ấn button "Kết thúc"
-$(".btn-submit").on("click", function () {
+// Hiển thị nội dung khi game end
+function renderGameEnd() {
+  if (userCorrect == data.length) {
+    $(".end-title").html("Thật xuất sắc !");
+    $(".end-result").html(`Bạn đã trả lời đúng tất cả các câu hỏi.`);
+  } else if (userCorrect == 0) {
+    $(".end-result").html(`Bạn không trả lời được câu hỏi nào.`);
+  } else {
+    $(".end-result").html(
+      `Bạn đã trả lời đúng ${userCorrect}/${data.length} câu hỏi.`
+    );
+  }
+}
+
+// Sau khi trả lời hết, người dùng ấn nút "Kết thúc"
+$(".btn-submit").on("click", () => {
   $(".end-game").removeClass("hide");
   $(".quiz").addClass("hide");
 
   const endSound = new Audio("../audio/winner-sound.mp3");
   endSound.play();
-});
-
-// Btn "Chơi lại"
-$(".play-again").on("click", function () {
-  window.location.reload();
 });
 
 // Countdown thời gian chơi game
@@ -181,7 +187,7 @@ function countDown() {
   $(".time").html(`${time}s`);
 
   if (time <= 5) {
-    $(".time").css("color", "#ff0000");
+    $(".time").css("color", "#ffd000");
   } else {
     $(".time").css("color", "#fff");
   }
@@ -198,36 +204,41 @@ function countDown() {
   }
 }
 
-// Button 50:50
+// Gán sự kiện cho nút "Chơi lại"
+$(".play-again").on("click", () => {
+  window.location.reload();
+});
+
+// Gán sự kiện cho nút 50:50: loại bỏ 2 đáp án sai, nút 50:50 chỉ được sử dụng 1 lần
 let allowHint = true;
 
 $(".hint").on("click", hint);
 
 function hint() {
   if (allowHint) {
+    // Loại bỏ đáp án đúng trong mảng choices của câu hỏi hiện tại
     let curChoices = data[curQuestion].choices;
-    for (let i = 0; i < curChoices.length; i++) {
-      if (curChoices[i] == data[curQuestion].answer) {
-        curChoices.splice(i, 1);
-        break;
+    curChoices.forEach((item, index) => {
+      if (item == data[curQuestion].answer) {
+        curChoices.splice(index, 1);
       }
-    }
+    });
 
+    // Chọn ngẫu nhiên 2 đáp án sai trong mảng choices (mảng đã được loại bỏ đáp án đúng)
     curChoices.sort(() => Math.random() - 0.5);
     let firstHint = curChoices[0];
     let secondHint = curChoices[1];
 
+    // Khi người dùng bấm nút 50:50, thêm hiệu ứng cho 2 đáp án sai
     let list = document.querySelectorAll(".choice p");
-
     Array.from(list).forEach((item) => {
       if (item.innerText == firstHint || item.innerText == secondHint) {
         item.classList.add("hint-choice");
-        item.parentNode
-          .querySelector(".fa-times-circle")
-          .classList.remove("hide");
       }
     });
+
+    // Disable nút 50:50
+    allowHint = false;
+    $(".hint").addClass("disable");
   }
-  allowHint = false;
-  $(".hint").addClass("disable");
 }

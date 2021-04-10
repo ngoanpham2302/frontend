@@ -22,7 +22,7 @@ body {
 
 .disable {
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .center {
@@ -149,7 +149,11 @@ body {
 }
 
 .hint {
-  cursor: pointer;
+  height: 40px;
+}
+
+.hint:hover {
+  transform: scaleX(1.03);
 }
 
 .diamonds {
@@ -178,8 +182,15 @@ body {
   position: absolute;
   top: 8px;
   right: 10px;
-  color: #fff;
   font-size: 22px;
+}
+
+.fa-check-circle {
+  color: #00ff40;
+}
+
+.fa-times-circle {
+  color: #ff5100;
 }
 
 .choice:hover {
@@ -193,6 +204,24 @@ body {
 
 .hint-choice {
   text-decoration: line-through;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.right-selected {
+  border: 1px solid #bef7b7;
+  color: #00ff40;
+  border-radius: 20px;
+  box-shadow: rgb(137, 212, 119) 3px 3px 6px 0px inset,
+    rgba(155, 240, 129, 0.5) -3px -3px 6px 1px inset;
+}
+
+.wrong-selected {
+  border: 1px solid #ffafa1;
+  color: #ff5100;
+  border-radius: 20px;
+  box-shadow: rgb(245, 127, 111) 3px 3px 6px 0px inset,
+    rgba(255, 125, 102, 0.5) -3px -3px 6px 1px inset;
 }
 
 .btn {
@@ -201,10 +230,23 @@ body {
   font-size: 16px;
   margin: 0 auto 20px;
   cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn.play-again,
+.btn.hint {
+  height: 50px;
+  width: 120px;
+  border-radius: 25px;
+  font-size: 20px;
 }
 
 .btn:focus {
   outline: none;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* End Game */
@@ -226,11 +268,4 @@ body {
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 20px;
-}
-
-.btn.play-again {
-  height: 50px;
-  width: 120px;
-  border-radius: 25px;
-  font-size: 20px;
 }

@@ -9,19 +9,19 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-image: url("./img/dawn-bg.jpg");
   background-repeat: no-repeat;
-  background-size: 120%;
-  background-position-y: center;
-  background-position-x: right;
+  background-size: cover;
+  background-position: left center;
   color: #4a3933;
   font-weight: 500;
 }
 
 .container {
-  margin-top: 50px;
   padding: 40px 20px;
   border: 1px solid rgba(12, 43, 63, 0.2);
   border-radius: 15px;
