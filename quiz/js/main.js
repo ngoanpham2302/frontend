@@ -136,11 +136,13 @@ function checkResult(choice) {
 
       choice.querySelector(".fa-check-circle").classList.remove("hide");
       choice.classList.add("right-selected");
+      $(".right-sound").get(0).play();
     } else {
       diamonds -= 50;
 
       choice.querySelector(".fa-times-circle").classList.remove("hide");
       choice.classList.add("wrong-selected");
+      $(".wrong-sound").get(0).play();
     }
 
     choice.firstElementChild.style.opacity = "1";
@@ -149,23 +151,8 @@ function checkResult(choice) {
     // Sau khi chọn đáp án thì cho phép next sang câu tiếp
     allowNext = true;
 
-    // Cập nhật diamond, nội dung khi game end
+    // Cập nhật diamond
     $(".diamonds").html(`${diamonds}`);
-    renderGameEnd();
-  }
-}
-
-// Hiển thị nội dung khi game end
-function renderGameEnd() {
-  if (userCorrect == data.length) {
-    $(".end-title").html("Thật xuất sắc !");
-    $(".end-result").html(`Bạn đã trả lời đúng tất cả các câu hỏi.`);
-  } else if (userCorrect == 0) {
-    $(".end-result").html(`Bạn không trả lời được câu hỏi nào.`);
-  } else {
-    $(".end-result").html(
-      `Bạn đã trả lời đúng ${userCorrect}/${data.length} câu hỏi.`
-    );
   }
 }
 
@@ -174,9 +161,26 @@ $(".btn-submit").on("click", () => {
   $(".end-game").removeClass("hide");
   $(".quiz").addClass("hide");
 
-  const endSound = new Audio("../audio/winner-sound.mp3");
-  endSound.play();
+  // Cập nhật nội dung khi game end
+  renderGameEnd();
 });
+
+// Hiển thị nội dung khi game end
+function renderGameEnd() {
+  if (userCorrect == data.length) {
+    $(".end-title").html("Thật xuất sắc !");
+    $(".end-result").html(`Bạn đã trả lời đúng tất cả các câu hỏi.`);
+    $(".winner-sound").get(0).play();
+  } else if (userCorrect == 0) {
+    $(".end-result").html(`Bạn không trả lời được câu hỏi nào.`);
+    $(".end-sound").get(0).play();
+  } else {
+    $(".end-result").html(
+      `Bạn đã trả lời đúng ${userCorrect}/${data.length} câu hỏi.`
+    );
+    $(".end-sound").get(0).play();
+  }
+}
 
 // Countdown thời gian chơi game
 let time = 50;
@@ -198,9 +202,7 @@ function countDown() {
     $(".end-game").removeClass("hide");
     $(".quiz").addClass("hide");
     $(".end-title").html("Hết giờ !");
-
-    const endLose = new Audio("../audio/loser-sound.mp3");
-    endLose.play();
+    $(".loser-sound").get(0).play();
   }
 }
 
@@ -234,6 +236,8 @@ function hint() {
     Array.from(list).forEach((item) => {
       if (item.innerText == firstHint || item.innerText == secondHint) {
         item.classList.add("hint-choice");
+        // document.querySelector(".hint-sound").play();
+        $(".hint-sound").get(0).play();
       }
     });
 
