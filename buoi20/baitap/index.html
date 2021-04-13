@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Layout</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .container {
+        width: 70%;
+        margin: auto;
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(5, auto);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 100%;
+          grid-template-columns: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p><b>Responsive Layout</b></p>
+    <div class="container">
+      <a href="./bai1.html" target="_blank">Bài 1</a>
+      <a href="./bai2.html" target="_blank">Bài 2</a>
+      <a href="./bai3.html" target="_blank">Bài 3</a>
+      <a href="./bai4.html" target="_blank">Bài 4</a>
+      <a href="./bai5.html" target="_blank">Bài 5</a>
+    </div>
+  </body>
+</html>
