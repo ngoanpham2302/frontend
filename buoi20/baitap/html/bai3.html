@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 3</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* For tablet */
+
+      .wrapper {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 30px;
+        padding: 15px 15px 0 15px;
+        margin-top: 30px;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 15px;
+        height: 300px;
+      }
+
+      .item {
+        background-color: #2367e4;
+      }
+
+      .col-2 {
+        background-color: #2367e4;
+        height: 500px;
+        width: 100%;
+      }
+
+      /* For desktop: min-width: 768px*/
+      @media (min-width: 768px) {
+        .wrapper {
+          grid-template-columns: 2fr 1fr;
+          padding: 0 30px 30px 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="col-1 container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </body>
+</html>

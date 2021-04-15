@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 4</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* For mobile */
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .row-1 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .item {
+        background-color: #2367e4;
+      }
+
+      .item.rect {
+        width: 60px;
+        height: 30px;
+      }
+
+      .row-2 {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 15px;
+      }
+
+      .item.square {
+        height: 300px;
+      }
+
+      /* For desktop */
+      @media (min-width: 600px) {
+        .wrapper {
+          padding-top: 0;
+        }
+
+        .row-1 {
+          height: 50px;
+          align-items: center;
+        }
+
+        .item.rect {
+          width: 90px;
+        }
+
+        .row-2 {
+          grid-template-columns: auto auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="row-1 container">
+        <div class="item rect"></div>
+        <div class="item rect"></div>
+        <div class="item rect"></div>
+      </div>
+      <div class="row-2 container">
+        <div class="item square"></div>
+        <div class="item square"></div>
+      </div>
+    </div>
+  </body>
+</html>

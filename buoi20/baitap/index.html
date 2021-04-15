@@ -13,17 +13,22 @@
       }
 
       .container {
-        width: 70%;
+        width: 60%;
         margin: auto;
-        display: grid;
-        grid-gap: 15px;
-        grid-template-columns: repeat(5, auto);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        line-height: 1.5;
+      }
+
+      a {
+        width: 25%;
       }
 
       @media (max-width: 768px) {
-        .container {
+        .container,
+        a {
           width: 100%;
-          grid-template-columns: auto;
         }
       }
     </style>
@@ -31,11 +36,13 @@
   <body>
     <p><b>Responsive Layout</b></p>
     <div class="container">
-      <a href="./bai1.html" target="_blank">Bài 1</a>
-      <a href="./bai2.html" target="_blank">Bài 2</a>
-      <a href="./bai3.html" target="_blank">Bài 3</a>
-      <a href="./bai4.html" target="_blank">Bài 4</a>
-      <a href="./bai5.html" target="_blank">Bài 5</a>
+      <a href="./html/bai1.html" target="_blank">Bài 1</a>
+      <a href="./html/bai2.html" target="_blank">Bài 2</a>
+      <a href="./html/bai3.html" target="_blank">Bài 3</a>
+      <a href="./html/bai4.html" target="_blank">Bài 4</a>
+      <a href="./html/bai5.html" target="_blank">Bài 5</a>
+      <a href="./html/bai6.html" target="_blank">Bài 6</a>
+      <a href="./html/bai7.html" target="_blank">Bài 7</a>
     </div>
   </body>
 </html>
