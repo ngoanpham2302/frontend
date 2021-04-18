@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <title>Khóa học</title>
+    <link
+      rel="shortcut icon"
+      href="https://techmaster.vn/resources/image/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid" id="header">
+      <header>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img
+                src="https://techmaster.vn/resources/image/new_logo.png"
+                alt="Logo Techmaster"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"
+                ><i class="fas fa-bars"></i
+              ></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Phòng lab</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Trực tuyến</a>
+                  <span class="nav-indicator"></span>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Khai giảng</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Chúng tôi
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
+                    <li><a class="dropdown-item" href="#">Trung tâm</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Quy định chung</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Giảng viên</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Hướng dẫn đăng ký học</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="body-part">
+      <div class="container body-content">
+        <div class="row">
+          <div class="col-md-12 col-xl-2 filter-desktop">
+            <div class="sticky sidebar">
+              <div class="filter-field">
+                <p class="filter-title">Đối tượng người học</p>
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="nguoi-hoc"
+                    id="doanh-nghiep"
+                    class="course-filter"
+                    value="doanh-nghiep"
+                  />
+                  <label for="doanh-nghiep" class="filter-label"
+                    >Doanh nghiệp</label
+                  >
+                </div>
+
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="nguoi-hoc"
+                    id="lop-toi"
+                    class="course-filter"
+                    value="lop-toi"
+                  />
+                  <label for="lop-toi" class="filter-label">Lớp tối</label>
+                </div>
+
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="nguoi-hoc"
+                    id="thieu-nhi"
+                    class="course-filter"
+                    value="thieu-nhi"
+                  />
+                  <label for="thieu-nhi" class="filter-label">Thiếu nhi</label>
+                </div>
+
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="nguoi-hoc"
+                    id="hoc-tu-dau"
+                    class="course-filter"
+                    value="hoc-tu-dau"
+                  />
+                  <label for="hoc-tu-dau" class="filter-label"
+                    >Học từ đầu</label
+                  >
+                </div>
+              </div>
+
+              <div class="filter-field">
+                <p class="filter-title">Chủ đề</p>
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="chu-de"
+                    id="web-frontend"
+                    class="course-filter"
+                    value="web-frontend"
+                  />
+                  <label for="web-frontend" class="filter-label"
+                    >Web frontend</label
+                  >
+                </div>
+
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="chu-de"
+                    id="di-dong"
+                    class="course-filter"
+                    value="di-dong"
+                  />
+                  <label for="di-dong" class="filter-label">Di động</label>
+                </div>
+
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="chu-de"
+                    id="web-backend"
+                    class="course-filter"
+                    value="web-backend"
+                  />
+                  <label for="web-backend" class="filter-label"
+                    >Web backend</label
+                  >
+                </div>
+
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="chu-de"
+                    id="big-data-ai"
+                    class="course-filter"
+                    value="big-data-ai"
+                  />
+                  <label for="big-data-ai" class="filter-label"
+                    >Big data, AI</label
+                  >
+                </div>
+
+                <div class="md-radio">
+                  <input
+                    type="radio"
+                    name="chu-de"
+                    id="kiem-thu"
+                    class="course-filter"
+                    value="kiem-thu"
+                  />
+                  <label for="kiem-thu" class="filter-label">Kiểm thử</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="modal-filter">
+            <div class="modal-content">
+              <div class="close-icon" onclick="closeModal()"><i class="fas fa-times"></i></div>
+              <div class="modal-header">
+                <h4>Lọc khóa học</h4>
+              </div>
+
+              <div class="modal-body">
+                <div class="filter-field">
+                  <p class="filter-title">Đối tượng người học</p>
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="nguoi-hoc"
+                      id="doanh-nghiep"
+                      class="course-filter"
+                      value="doanh-nghiep"
+                    />
+                    <label for="doanh-nghiep" class="filter-label"
+                      >Doanh nghiệp</label
+                    >
+                  </div>
+
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="nguoi-hoc"
+                      id="lop-toi"
+                      class="course-filter"
+                      value="lop-toi"
+                    />
+                    <label for="lop-toi" class="filter-label">Lớp tối</label>
+                  </div>
+
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="nguoi-hoc"
+                      id="thieu-nhi"
+                      class="course-filter"
+                      value="thieu-nhi"
+                    />
+                    <label for="thieu-nhi" class="filter-label"
+                      >Thiếu nhi</label
+                    >
+                  </div>
+
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="nguoi-hoc"
+                      id="hoc-tu-dau"
+                      class="course-filter"
+                      value="hoc-tu-dau"
+                    />
+                    <label for="hoc-tu-dau" class="filter-label"
+                      >Học từ đầu</label
+                    >
+                  </div>
+                </div>
+
+                <div class="filter-field">
+                  <p class="filter-title">Chủ đề</p>
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="chu-de"
+                      id="web-frontend"
+                      class="course-filter"
+                      value="web-frontend"
+                    />
+                    <label for="web-frontend" class="filter-label"
+                      >Web frontend</label
+                    >
+                  </div>
+
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="chu-de"
+                      id="di-dong"
+                      class="course-filter"
+                      value="di-dong"
+                    />
+                    <label for="di-dong" class="filter-label">Di động</label>
+                  </div>
+
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="chu-de"
+                      id="web-backend"
+                      class="course-filter"
+                      value="web-backend"
+                    />
+                    <label for="web-backend" class="filter-label"
+                      >Web backend</label
+                    >
+                  </div>
+
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="chu-de"
+                      id="big-data-ai"
+                      class="course-filter"
+                      value="big-data-ai"
+                    />
+                    <label for="big-data-ai" class="filter-label"
+                      >Big data, AI</label
+                    >
+                  </div>
+
+                  <div class="md-radio">
+                    <input
+                      type="radio"
+                      name="chu-de"
+                      id="kiem-thu"
+                      class="course-filter"
+                      value="kiem-thu"
+                    />
+                    <label for="kiem-thu" class="filter-label">Kiểm thử</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal-apply">
+                <button class="btn btn-apply" onclick="closeModal()">Áp dụng</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-xl-10">
+            <div class="row">
+              <div class="col-0 col-md-0 col-xl-4"></div>
+              <div class="col-0 col-md-6 col-xl-4"></div>
+              <div class="list-search col-12 col-md-6 col-xl-4">
+                <div class="search-course">
+                  <input
+                    type="text"
+                    placeholder="Tìm kiếm khóa học"
+                    id="input-search-course"
+                    class="form-control"
+                  />
+                  <i class="fa fa-search"></i>
+                </div>
+                <button class="btn btn-green filter-mobile" onclick="showModal()">
+                  <i class="fas fa-filter"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="list-courses">
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/fileman/Uploads/web-thumnail.png"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">
+                    Web cơ bản HTML5, CSS3 và Javascript Online
+                  </p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 4.6 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">400.000đ</span>
+                  <span class="old-price">500.000đ</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/10194/bv7f8ms51coduae6ij60"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">
+                    Javascript căn bản - Tổng hợp 12 game huyền thoại
+                  </p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 4.5 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">400.000đ</span>
+                  <span class="old-price">500.000đ</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/9479/c18735c51cochrklno30"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">Lập trình Nodejs (cập nhật 2021)</p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 4.6 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">300.000đ</span>
+                  <span class="old-price"></span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/bub3enc51co7s932dsk0/c105hnk51coag9451ev0"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">
+                    Lập trình di động đa nền tảng React Native Online (cập nhật
+                    2021)
+                  </p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 5 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">480.000đ</span>
+                  <span class="old-price">600.000đ</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/6734/bscggh451cob9t3q7meg"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">
+                    Khoá học Lập trình đa nền tảng với Flutter
+                  </p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 3.4 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">480.000đ</span>
+                  <span class="old-price">600.000đ</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/8028/bqa348s51cocm3n1ubq0"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">Lập trình di động IOS Swift online</p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 4.5 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">400.000đ</span>
+                  <span class="old-price">500.000đ</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/6734/bvught451cobimh85mng"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">Lập trình Golang căn bản</p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 4.3 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">160.000đ</span>
+                  <span class="old-price">200.000đ</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/8028/bqa38fk51cocm3n1ubqg"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">
+                    Học Angular 8+ qua các ví dụ thực tế
+                  </p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 4 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">400.000đ</span>
+                  <span class="old-price">500.000đ</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <img
+                  src="https://techmaster.vn/media/static/6734/bo5caps51coco9d0vu80"
+                  class="card-img-top"
+                  alt="Course thumbnail"
+                />
+                <div class="card-body course-info">
+                  <p class="course-title">Khoá học SQL nâng cao</p>
+                  <p class="course-description">
+                    <span class="description">Trực tuyến</span>
+                    <span class="stars"> 4 <i class="fas fa-star"></i> </span>
+                  </p>
+                </div>
+                <div class="course-price">
+                  <span class="new-price">320.000đ</span>
+                  <span class="old-price">400.000đ</span>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="footer">
+      <div class="container footer">
+        <footer>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-3">
+              <ul class="footer-info">
+                <h4 class="footer-title">Chủ sở hữu website</h4>
+                <li>
+                  <a href="#" target="_blank"
+                    >Công ty TNHH TechMaster Vietnam Ltd</a
+                  >
+                </li>
+                <li><span>Số ĐKDN: 0105392153</span></li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <ul class="footer-info">
+                <h4 class="footer-title">Giới thiệu</h4>
+                <li>
+                  <a href="#" target="_blank">Học viện CNTT Techmaster</a>
+                </li>
+                <li><a href="#" target="_blank">Giảng viên</a></li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <ul class="footer-info">
+                <h4 class="footer-title">Tư vấn tuyển sinh</h4>
+                <li>
+                  <a href="#" target="_blank"
+                    >1. Nguyễn Thanh Hương - 0382416368</a
+                  >
+                </li>
+                <li>
+                  <a href="#" target="_blank">2. Phạm Mẫn - 0963023185</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+              <ul class="footer-info">
+                <h4 class="footer-title">Địa chỉ</h4>
+                <li>
+                  <a href="#" target="_blank"
+                    >Tầng 12A, tòa nhà Viwaseen Tower, số 48, Tố Hữu, Lê Văn
+                    Lương kéo dài, Hà Nội</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
