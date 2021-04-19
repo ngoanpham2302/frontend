@@ -417,6 +417,10 @@ footer {
   .modal-filter {
     width: 350px;
   }
+
+  .footer-info {
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
