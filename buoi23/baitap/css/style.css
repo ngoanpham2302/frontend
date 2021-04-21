@@ -514,6 +514,10 @@ img {
     margin-right: 12px;
   }
 
+  .menu-item.active:hover {
+    background: rgba(255, 255, 255, 0.98);
+  }
+
   .header-content {
     max-width: 595px;
   }
@@ -547,16 +551,17 @@ img {
 
   .header-content {
     width: 95%;
-    margin-top: 110px;
+    margin-top: 90px;
   }
 
   .header-title {
     font-size: 30px;
-    line-height: 50px;
+    line-height: 70px;
   }
 
   .header-search {
     flex-wrap: wrap;
+    margin-top: 25px;
   }
 
   .input-model {

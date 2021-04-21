@@ -3,9 +3,9 @@ function hideMenu() {
     $(".header-menu").addClass("hide");
   }
 
-   if (window.matchMedia && window.matchMedia("(min-width: 769px)").matches) {
-     $(".header-menu").removeClass("hide");
-   }
+  if (window.matchMedia && window.matchMedia("(min-width: 769px)").matches) {
+    $(".header-menu").removeClass("hide");
+  }
 }
 
 window.onload = hideMenu;
