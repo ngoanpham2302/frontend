@@ -52,7 +52,8 @@ body {
   position: relative;
 }
 
-.nav a {
+.nav a,
+#footer a {
   text-decoration: none;
   color: inherit;
 }
@@ -90,14 +91,12 @@ body {
 
 .menu-item a,
 .login {
-  transition: font-size 0.3s ease-in-out;
-  will-change: font-size;
+  transition: 0.3s ease-in-out;
 }
 
 .menu-item:hover > a,
 .login:hover {
-  color: #666;
-  font-size: 15px;
+  color: #777;
 }
 
 .btn {
@@ -555,6 +554,22 @@ body {
   font-size: 16px;
   opacity: 0.2;
   padding: 0 15px;
+  transition: all 0.3s ease;
+}
+
+.twitter:hover i {
+  color: #1da1f2;
+  opacity: 1;
+}
+
+.facebook:hover i {
+  color: #3b5693;
+  opacity: 1;
+}
+
+.youtube:hover i {
+  color: #ff0000;
+  opacity: 1;
 }
 
 .copyright {
