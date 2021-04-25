@@ -579,6 +579,21 @@ body {
   .slide img {
     width: 270px;
   }
+
+  .nav,
+  .features-content,
+  .section-community {
+    padding-left: 250px;
+    padding-right: 250px;
+  }
+
+  .section-container {
+    margin-left: 250px;
+  }
+
+  .section-background img {
+    height: 400px;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -615,7 +630,7 @@ body {
   }
 
   .features-content {
-    padding: 0 100px;
+    padding: 0 120px;
     grid-gap: 80px;
   }
 
@@ -638,6 +653,11 @@ body {
 
   .section-community {
     padding: 0 120px;
+  }
+
+  .slide,
+  .slide img {
+    width: 225px;
   }
 }
 
@@ -703,7 +723,7 @@ body {
 
   .slide,
   .slide img {
-    width: 200px;
+    width: 240px;
   }
 
   .section-community {
