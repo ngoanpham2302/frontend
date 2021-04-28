@@ -198,11 +198,11 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 20px;
+  /* line-height: 20px; */
   color: #000000;
   mix-blend-mode: normal;
   opacity: 0.3;
-  overflow: visible;
+  /* overflow: visible; */
 }
 
 .btn-tracking {
