@@ -195,17 +195,16 @@ body {
 }
 
 .input-email::placeholder,
-.input-email::-webkit-placeholder,
-.input-email::-moz-placeholder {
+.input-email::-webkit-placeholder {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-weight: normal;
+  mix-blend-mode: normal;
   font-size: 16px;
   line-height: 20px;
   color: #000000;
-  mix-blend-mode: normal;
   opacity: 0.3;
-  /* overflow: visible; */
+  overflow: visible;
 }
 
 .btn-tracking {
