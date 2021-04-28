@@ -8,6 +8,7 @@ $(".slider").slick({
   slidesToShow: 5.6,
   slidesToScroll: 1,
   pauseOnFocus: false,
+  pauseOnHover: false,
 
   responsive: [
     {
@@ -47,6 +48,7 @@ $(".comment-list-01").slick({
   slidesToShow: 3.2,
   slidesToScroll: 1,
   pauseOnFocus: false,
+  pauseOnHover: false,
   vertical: true,
 
   responsive: [
@@ -82,5 +84,6 @@ $(".comment-list-02").slick({
   slidesToShow: 3.4,
   slidesToScroll: 1,
   pauseOnFocus: false,
+  pauseOnHover: false,
   vertical: true,
 });
