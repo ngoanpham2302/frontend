@@ -188,14 +188,10 @@ body {
   padding: 23px 15px 10px 15px;
   background: #ffffff;
   border: 0.5px solid rgba(0, 0, 0, 0.05);
-  -webkit-border: 0.5px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px 0 0 4px;
-  -webkit-border-radius: 4px 0 0 4px;
-  -moz-border-radius: 4px 0 0 4px;
 }
 
-.input-email::placeholder,
-.input-email::-webkit-placeholder {
+.input-email::placeholder {
   font-family: "Source Sans Pro", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -521,7 +517,16 @@ body {
 .customer-twitter {
   text-decoration: none;
   color: inherit;
+}
+
+.customer-twitter i {
   opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.customer-twitter:hover i {
+  color: #1da1f2;
+  opacity: 1;
 }
 
 .comment {
