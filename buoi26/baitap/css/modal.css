@@ -1,0 +1,24 @@
+.modal-backdrop {
+  display: none;
+}
+
+.modal.show .modal-dialog {
+  animation: dropmodal 0.3s linear 1;
+}
+
+@keyframes dropmodal {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    margin: 5rem auto;
+  }
+}
