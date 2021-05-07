@@ -1,0 +1,13 @@
+.home-icon {
+  top: 5%;
+  left: 5%;
+}
+.home-icon i {
+  font-size: 1.6rem;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.home-icon:hover .fa-home {
+  color: #000;
+}
