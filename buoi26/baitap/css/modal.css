@@ -1,17 +1,64 @@
+.text p {
+  text-align: justify;
+}
+
 .modal-backdrop {
   display: none;
 }
 
-.modal.show .modal-dialog {
-  animation: dropmodal 0.3s linear 1;
+.modal-backdrop.show {
+  animation: fadein 0.4s linear;
+}
+
+.modal-backdrop.out {
+  animation: fadeout 0.3s linear;
+}
+
+.modal.fade .modal-dialog {
+  animation: dropmodal 0.4s linear;
+}
+
+.modal.out .modal-dialog {
+  animation: fademodal 0.3s linear;
 }
 
 @keyframes dropmodal {
   0% {
-    transform: translateY(-20%);
+    top: -15%;
+    opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fademodal {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -15%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
