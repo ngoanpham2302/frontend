@@ -1,0 +1,12 @@
+.tab-pane {
+  animation: slideUp 0.4s linear;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

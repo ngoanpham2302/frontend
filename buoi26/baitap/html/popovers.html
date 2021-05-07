@@ -18,12 +18,12 @@
   <body>
     <h1 class="text-center mt-3">Popovers</h1>
 
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 pt-5 d-flex justify-content-around">
       <div class="popovers-wrapper">
-        <button class="btn btn-danger btn-top" onclick="showPopover('.top')">
+        <button class="btn btn-danger btn-pop" value=".top">
           Popover on top
         </button>
-        <div class="popover top bs-popover-top">
+        <div class="popover top bs-popover-top d-none">
           <div class="popover-arrow"></div>
           <h3 class="popover-header">Top popover</h3>
           <div class="popover-body">Amazing content!</div>
@@ -31,14 +31,11 @@
       </div>
 
       <div class="popovers-wrapper">
-        <button
-          class="btn btn-success btn-right"
-          onclick="showPopover('.right')"
-        >
+        <button class="btn btn-success btn-pop" value=".right">
           Popover on right
         </button>
 
-        <div class="popover right bs-popover-end">
+        <div class="popover right bs-popover-end d-none">
           <div class="popover-arrow"></div>
           <h3 class="popover-header">Right popover</h3>
           <div class="popover-body">Amazing content!</div>
@@ -46,13 +43,10 @@
       </div>
 
       <div class="popovers-wrapper">
-        <button
-          class="btn btn-danger btn-bottom"
-          onclick="showPopover('.bottom')"
-        >
+        <button class="btn btn-danger btn-pop" value=".bottom">
           Popover on bottom
         </button>
-        <div class="popover bottom bs-popover-bottom">
+        <div class="popover bottom bs-popover-bottom d-none">
           <div class="popover-arrow"></div>
           <h3 class="popover-header">Bottom popover</h3>
           <div class="popover-body">Amazing content!</div>
@@ -60,10 +54,10 @@
       </div>
 
       <div class="popovers-wrapper">
-        <button class="btn btn-success btn-left" onclick="showPopover('.left')">
+        <button class="btn btn-success btn-pop" value=".left">
           Popover on left
         </button>
-        <div class="popover left bs-popover-start">
+        <div class="popover left bs-popover-start d-none">
           <div class="popover-arrow"></div>
           <h3 class="popover-header">Left popover</h3>
           <div class="popover-body">Amazing content!</div>

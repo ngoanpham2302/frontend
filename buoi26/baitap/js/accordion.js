@@ -1,9 +1,9 @@
 $(".accordion-header").click(function () {
   // Ẩn content, thay đổi style của accordion item cũ
-  $(".accordion-header").not(this).next(".accordion-collapse").slideUp();
+  $(".accordion-header").not(this).next().slideUp(600);
   $(".accordion-header").not(this).children().addClass("collapsed");
 
-  // Show/hide content và thay đổi style của accordion item mới
-  $(this).next(".accordion-collapse").slideToggle();
+  // Hiện/ẩn content và thay đổi style của accordion item mới
+  $(this).next().slideToggle(600);
   $(this).children().toggleClass("collapsed");
 });

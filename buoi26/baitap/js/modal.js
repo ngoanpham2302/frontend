@@ -1,4 +1,5 @@
 // Open modal
+$(".btn-open").click(openModal);
 function openModal() {
   $(".modal").addClass("show");
   $(".modal").css("display", "block");
@@ -6,6 +7,7 @@ function openModal() {
 }
 
 // Close modal
+$(".close-modal").click(closeModal);
 function closeModal() {
   $(".modal").removeClass("show");
   $(".modal").css("display", "none");

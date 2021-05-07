@@ -1,14 +1,5 @@
-.container {
-  display: flex;
-  justify-content: space-around;
-}
-
 .popovers-wrapper {
   position: relative;
-}
-
-.popover {
-  display: none;
 }
 
 .popover-body,
@@ -19,6 +10,11 @@
 .top {
   top: -230%;
   transform: translateX(3%);
+}
+
+.bottom {
+  top: 135%;
+  transform: translateX(10%);
 }
 
 .right {
@@ -34,29 +30,19 @@
   left: -105%;
 }
 
-.bottom {
-  top: 135%;
-  transform: translateX(10%);
-}
-
 .right .popover-arrow,
 .left .popover-arrow {
-  transform: translate(0, 30px);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.top .popover-arrow {
-  transform: translate(53px, 0);
-}
-
+.top .popover-arrow,
 .bottom .popover-arrow {
-  transform: translate(57px, 0);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.show-popover {
-  display: block;
-}
-
-@media (max-width: 996px) {
+@media (max-width: 992px) {
   .container {
     flex-wrap: wrap;
     gap: 70px;

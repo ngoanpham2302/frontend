@@ -7,13 +7,11 @@
 }
 
 @keyframes dropmodal {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
+  0% {
+    transform: translateY(-20%);
   }
-  to {
+  100% {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 
