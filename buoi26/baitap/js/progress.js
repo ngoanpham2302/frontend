@@ -1,5 +1,5 @@
-let time = 100;
 let interval;
+let time = 100;
 // Biến check trạng thái progress bar đã pause hay chưa
 let isPaused = false;
 
@@ -15,16 +15,16 @@ $(".btn-start").click(function () {
 
 // Button pause/resume
 $(".btn-pause").click(function () {
-  // Khi progress đang active, ấn pause
+  // Khi progress đang active, click để dừng progress
   if (!isPaused) {
     clearInterval(interval);
-    $(".btn-pause").html("Resume");
+    $(".btn-pause").text("Resume");
     isPaused = true;
 
-    //   Khi đã ấn pause, ấn resume để tiếp tục
+    // Khi progress đang pause, click để tiếp tục
   } else {
     interval = setInterval(countDown, 1000);
-    $(".btn-pause").html("Pause");
+    $(".btn-pause").text("Pause");
     isPaused = false;
   }
 });
@@ -33,24 +33,25 @@ $(".btn-pause").click(function () {
 $(".btn-reset").click(function () {
   clearInterval(interval);
   time = 100;
+  $(".progress-bar").text("");
   $(".progress-bar").css("width", "0%");
-  $(".progress-bar").html("");
 
-  // Set button pause/resume về trạng thái ban đầu
-  $(".btn-pause").html("Pause");
+  // Đưa button pause/resume về trạng thái ban đầu
+  $(".btn-pause").text("Pause");
   isPaused = false;
+
   // Disable button pause/resume, reset, enable button start
   $(".btn-start").removeClass("disabled");
   $(".btn-pause").addClass("disabled");
   $(".btn-reset").addClass("disabled");
 });
 
-// Hàm đếm ngược thời gian
+// Function đếm ngược thời gian
 function countDown() {
   time--;
   let progressBarWidth = 100 - time + "%";
+  $(".progress-bar").text(progressBarWidth);
   $(".progress-bar").css("width", progressBarWidth);
-  $(".progress-bar").html(progressBarWidth);
 
   if (time == 0) {
     clearInterval(interval);

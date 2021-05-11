@@ -1,0 +1,12 @@
+.text p {
+  text-align: justify;
+}
+
+.toast:not(.showing):not(.show) {
+  opacity: 1;
+}
+
+.fb-icon {
+  width: 20px;
+  height: 20px;
+}

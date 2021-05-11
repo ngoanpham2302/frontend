@@ -1,12 +1,8 @@
 // Open modal
 $(".btn-open").click(openModal);
 function openModal() {
-  $(".modal").removeClass("out");
-  $(".modal-backdrop").removeClass("out");
-
-  $(".modal").addClass("show");
-  $(".modal").css("display", "block");
-  $(".modal-backdrop").css("display", "block");
+  $(".modal").removeClass("out").addClass("show").css("display", "block");
+  $(".modal-backdrop").removeClass("out").css("display", "block");
 }
 
 // Close modal
@@ -17,8 +13,7 @@ function closeModal() {
   $(".modal-backdrop").addClass("out");
 
   setTimeout(() => {
-    $(".modal").removeClass("show");
-    $(".modal").css("display", "none");
+    $(".modal").removeClass("show").css("display", "none");
     $(".modal-backdrop").css("display", "none");
   }, 200);
 }
@@ -30,3 +25,9 @@ $(document).click(function (event) {
     closeModal();
   }
 });
+
+// Cách 2:
+// $(document).click(function (event) {
+//   if ($(event.target).is(".modal"))
+//   closeModal();
+// })

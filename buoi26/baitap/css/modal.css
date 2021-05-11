@@ -14,7 +14,7 @@
   animation: fadeout 0.3s linear;
 }
 
-.modal.fade .modal-dialog {
+.modal .modal-dialog {
   animation: dropmodal 0.4s linear;
 }
 
